@@ -1,55 +1,33 @@
 import { useState } from 'react'
 import SidebarNav from './components/SidebarNav'
-import HeroSection from './components/HeroSection'
-import DashboardOverview from './components/DashboardOverview'
-import InboxPanel from './components/InboxPanel'
+import CEOTopBar from './components/CEOTopBar'
+import SplineBackdrop from './components/SplineBackdrop'
+import CEODashboardGrid from './components/CEODashboardGrid'
+import CEOAdditionalSections from './components/CEOAdditionalSections'
 
 function App() {
-  const [current, setCurrent] = useState('Home')
+  const [current, setCurrent] = useState('CEO')
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#FAFAFA] to-white text-gray-900">
+    <div className="min-h-screen bg-gradient-to-b from-[#FAFAFA] to-white text-neutral-900 dark:from-neutral-950 dark:to-neutral-950 dark:text-neutral-100">
       <div className="flex">
         <SidebarNav current={current} onSelect={setCurrent} />
         <main className="flex-1 p-6">
           <div className="mx-auto max-w-7xl space-y-6">
-            <HeroSection />
-
-            {current === 'Home' && (
+            {current === 'CEO' && (
               <>
-                <DashboardOverview />
-                <InboxPanel />
+                <CEOTopBar />
+                <SplineBackdrop />
+                <CEODashboardGrid />
+                <CEOAdditionalSections />
               </>
             )}
 
-            {current === 'Inbox' && (
-              <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-                <div className="lg:col-span-2"><InboxPanel /></div>
-                <div className="space-y-4">
-                  <div className="rounded-xl border bg-white p-4">
-                    <p className="text-sm font-medium text-gray-900">Today at a glance</p>
-                    <ul className="mt-3 space-y-2 list-disc pl-5 text-sm text-gray-700">
-                      <li>7 tasks completed by agents</li>
-                      <li>3 approvals requested</li>
-                      <li>No anomalies detected</li>
-                    </ul>
-                  </div>
-                </div>
+            {current !== 'CEO' && (
+              <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm dark:border-neutral-800 dark:bg-neutral-900">
+                <h2 className="text-xl font-semibold">{current} Workspace</h2>
+                <p className="mt-2 text-neutral-600 dark:text-neutral-400">Choose CEO to view the command dashboard.</p>
               </div>
-            )}
-
-            {['CEO','CFO','CMO','Sales','CTO','HR','Ops'].includes(current) && (
-              <section className="rounded-2xl border bg-white p-6">
-                <h2 className="text-xl font-semibold">{current} Agent Workspace</h2>
-                <p className="mt-2 text-gray-600">Conversational execution, action panels, metrics, and recent activity will appear here.</p>
-              </section>
-            )}
-
-            {current === 'Settings' && (
-              <section className="rounded-2xl border bg-white p-6">
-                <h2 className="text-xl font-semibold">Settings</h2>
-                <p className="mt-2 text-gray-600">Connect data sources, auth, and workflow engine. Configure approvals and notification preferences.</p>
-              </section>
             )}
           </div>
         </main>

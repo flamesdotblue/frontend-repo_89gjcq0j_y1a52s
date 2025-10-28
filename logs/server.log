@@ -1,0 +1,32 @@
+
+> vibe-generated-app@1.0.0 dev
+> vite
+
+
+  VITE v5.4.20  ready in 207 ms
+
+  ➜  Local:   http://localhost:3000/
+  ➜  Network: http://172.20.31.184:3000/
+7:23:47 PM [vite] Pre-transform error: Failed to resolve import "prop-types" from "src/components/SidebarNav.jsx". Does the file exist?
+7:23:47 PM [vite] ✨ new dependencies optimized: lucide-react, @splinetool/react-spline
+7:23:47 PM [vite] ✨ optimized dependencies changed. reloading
+7:23:48 PM [vite] Pre-transform error: Failed to resolve import "prop-types" from "src/components/SidebarNav.jsx". Does the file exist?
+7:23:50 PM [vite] Internal server error: Failed to resolve import "prop-types" from "src/components/SidebarNav.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /home/workspace/src/components/SidebarNav.jsx:2:22
+  1  |  import { jsxDEV } from "react/jsx-dev-runtime";
+  2  |  import { Home, Inbox, Workflow, Briefcase, DollarSign, Megaphone, Code, Users, Settings } from "lucide-react";
+  3  |  import PropTypes from "prop-types";
+     |                         ^
+  4  |  const items = [
+  5  |    { label: "Home", icon: Home },
+      at TransformPluginContext._formatError (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)

@@ -1,5 +1,4 @@
-import { Home, Inbox, Workflow, Briefcase, DollarSign, Megaphone, Code, Users, Settings } from 'lucide-react'
-import PropTypes from 'prop-types'
+import { Home, Inbox, Briefcase, DollarSign, Megaphone, Code, Users, Settings, BarChart3 } from 'lucide-react'
 
 const items = [
   { label: 'Home', icon: Home },
@@ -7,7 +6,7 @@ const items = [
   { label: 'CEO', icon: Briefcase },
   { label: 'CFO', icon: DollarSign },
   { label: 'CMO', icon: Megaphone },
-  { label: 'Sales', icon: Workflow },
+  { label: 'Sales', icon: BarChart3 },
   { label: 'CTO', icon: Code },
   { label: 'HR', icon: Users },
   { label: 'Ops', icon: Briefcase },
@@ -16,7 +15,7 @@ const items = [
 
 export default function SidebarNav({ current, onSelect }) {
   return (
-    <aside className="h-screen w-64 border-r bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/40">
+    <aside className="relative h-screen w-64 border-r bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/40">
       <div className="px-5 py-6">
         <div className="flex items-center gap-2">
           <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-purple-500 via-blue-500 to-orange-400" />
@@ -48,9 +47,4 @@ export default function SidebarNav({ current, onSelect }) {
       </div>
     </aside>
   )
-}
-
-SidebarNav.propTypes = {
-  current: PropTypes.string.isRequired,
-  onSelect: PropTypes.func.isRequired,
 }
